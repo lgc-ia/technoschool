@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import Image from "next/image";
 // ImageWithFallback removed; switched to next/image
 
+/* Equipe LGC */
+
 const team = [
   {
     name: "Ismaël Niang",

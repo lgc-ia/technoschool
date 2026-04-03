@@ -10,11 +10,11 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-5xl leading-tight"
         >
-          Développez votre{" "}
+          TechnoSchool{" "}
           <span className="bg-gradient-to-r from-[#5C6FFF] to-[#AD6BFF] bg-clip-text text-transparent">
-            expertise Tech LGC
+            - LGC R&D
           </span>
-          ,<br />
+          <br />
           programmez votre{" "}
           <span className="bg-gradient-to-r from-[#5C6FFF] to-[#AD6BFF] bg-clip-text text-transparent">
             avenir !
@@ -28,7 +28,7 @@ export function Hero() {
           className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
         >
           La grande classe TechSchool forme celles et ceux qui construisent le monde
-          numérique de demain.
+          digital de demain.
         </motion.p>
 
         <motion.div

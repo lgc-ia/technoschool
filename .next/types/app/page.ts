@@ -1,4 +1,4 @@
-// File: D:\1-cours-Web\1-LGC-classroom-studio\1-projet-lgc-py-nextJs\8-Futuristic-tech- School-Landing- page\app\page.tsx
+// File: D:\1-cours-Web\1-LGC-classroom-studio-product\1-projet-lgc-py-nextJs\31-techschool-lgc\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

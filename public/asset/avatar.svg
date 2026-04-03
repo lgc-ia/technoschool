@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Avatar">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5C6FFF"/>
+      <stop offset="100%" stop-color="#AD6BFF"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <circle cx="128" cy="96" r="60"/>
+    </clipPath>
+  </defs>
+
+  <rect width="256" height="256" rx="24" fill="url(#grad)"/>
+
+  <!-- Head -->
+  <circle cx="128" cy="96" r="60" fill="rgba(255,255,255,0.95)"/>
+
+  <!-- Shoulders/body -->
+  <path d="M32 232c0-56 43-88 96-88s96 32 96 88v8H32z" fill="rgba(255,255,255,0.95)"/>
+
+  <!-- Optional inner clip for placing a photo inside the head silhouette -->
+  <!--
+  <image href="/asset/avatar.png" x="68" y="36" width="120" height="120" clip-path="url(#clip)"/>
+  -->
+</svg>
+

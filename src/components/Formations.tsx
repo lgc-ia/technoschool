@@ -4,13 +4,13 @@ import { motion } from "motion/react";
 const formations = [
   {
     icon: Code2,
-    title: "Développement Web",
+    title: "Développement Web / Full Stack - BTS SIO",
     description:
       "Maîtrisez les technologies front-end et back-end pour créer des applications web modernes et performantes.",
   },
   {
     icon: Database,
-    title: "Data Science & IA",
+    title: "Data & IA",
     description:
       "Exploitez la puissance des données et de l'intelligence artificielle pour résoudre des problèmes complexes.",
   },

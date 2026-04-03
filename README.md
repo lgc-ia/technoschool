@@ -44,3 +44,12 @@ Exemples:
 - L’ancienne configuration Vite a été retirée. Les scripts utilisent désormais Next.
 - Les composants qui emploient `window`/`document` restent côté client via `app/page.tsx`.
 - Vous pouvez ultérieurement migrer progressivement vers des Server Components si besoin.
+
+## Technologies du MVP
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Motion](https://img.shields.io/badge/Motion-000000?style=for-the-badge&logo=framer&logoColor=white)

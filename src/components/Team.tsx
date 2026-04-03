@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import Image from "next/image";
 // ImageWithFallback removed; switched to next/image
 
+/* Equipe LGC */
+
 const team = [
   {
     name: "Ismaël Niang",
@@ -20,7 +22,7 @@ const team = [
   },
   {
     name: "Giuseppe Militello",
-    role: "DCO R&D",
+    role: "CTO R&D",
     image: "/asset/gius.png"
   },
    {
@@ -49,9 +51,9 @@ const team = [
     image: "/asset/avatar.svg"
   },
       {
-    name: "Martin Merrouni",
-    role: "Responsable HCR",
-    image: "/asset/martin.png"
+    name: "Nom Prénom",
+    role: "Chargé de formation",
+    image: "/asset/avatar.svg"
   },
        {
     name: "Sophie Armand",
@@ -59,7 +61,7 @@ const team = [
     image: "/asset/sophie.png"
   },
       {
-    name: "Hélène-Béatrice Gros",
+    name: "Nom Prénom",
     role: "Responsable pédagogique",
     image: "/asset/avatar.svg"
   },
@@ -80,7 +82,7 @@ export function Team() {
         >
           La Team La grande classe &amp; 
               <span className="bg-gradient-to-r from-[#5C6FFF] to-[#AD6BFF] bg-clip-text text-transparent">
-                &nbsp;TechSchool
+                &nbsp;TechnoSchool - R&D
             </span>
         </motion.h2>
 

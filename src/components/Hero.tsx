@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 
+import { ContactInquiryDialog } from "./ContactInquiryDialog";
+
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
@@ -27,7 +29,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
         >
-          La grande classe TechSchool forme celles et ceux qui construisent le monde
+          La grande classe TechnoSchool forme celles et ceux qui construisent le monde
           digital de demain.
         </motion.p>
 
@@ -36,9 +38,13 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button className="px-8 py-4 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white rounded-full shadow-[0_0_30px_rgba(92,111,255,0.5)] hover:shadow-[0_0_40px_rgba(92,111,255,0.7)] transition-all duration-300">
-            Découvrir nos formations
-          </button>
+          <ContactInquiryDialog
+            trigger={
+              <button className="px-8 py-4 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white rounded-full shadow-[0_0_30px_rgba(92,111,255,0.5)] hover:shadow-[0_0_40px_rgba(92,111,255,0.7)] transition-all duration-300">
+                Découvrir nos formations
+              </button>
+            }
+          />
         </motion.div>
       </div>
     </section>

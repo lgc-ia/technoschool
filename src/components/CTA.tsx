@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 
+import { ContactInquiryDialog } from "./ContactInquiryDialog";
+
 export function CTA() {
   return (
     <section className="relative py-32 px-6 overflow-hidden">
@@ -18,9 +20,22 @@ export function CTA() {
         <h2 className="text-4xl md:text-6xl">
           Envie de développer le numérique de demain ?
         </h2>
-        <button className="px-10 py-5 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white rounded-full shadow-[0_0_30px_rgba(92,111,255,0.5)] hover:shadow-[0_0_40px_rgba(92,111,255,0.7)] transition-all duration-300 text-lg">
-          Contactez-nous
-        </button>
+        <ContactInquiryDialog
+          title="Parlons de votre projet digital"
+          description="Vous avez déjà une idée, un besoin ou un projet numérique en tête ? Décrivez votre contexte et vos objectifs, nous reviendrons vers vous pour en discuter."
+          messageLabel="Votre projet digital"
+          messagePlaceholder="Décrivez votre besoin, votre projet, vos objectifs ou les fonctionnalités attendues..."
+          submitLabel="Être recontacté"
+          showFormationField={false}
+          trigger={
+            <button
+              className="px-10 py-5 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white rounded-full shadow-[0_0_30px_rgba(92,111,255,0.5)] hover:shadow-[0_0_40px_rgba(92,111,255,0.7)] transition-all duration-300 text-lg"
+              style={{ cursor: "pointer" }}
+            >
+              Contactez-nous
+            </button>
+          }
+        />
       </motion.div>
     </section>
   );

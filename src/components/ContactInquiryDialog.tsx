@@ -5,6 +5,14 @@ import { createPortal } from "react-dom";
 
 type ContactInquiryDialogProps = {
   trigger: React.ReactElement<React.ButtonHTMLAttributes<HTMLButtonElement>>;
+  title?: string;
+  description?: string;
+  messageLabel?: string;
+  messagePlaceholder?: string;
+  submitLabel?: string;
+  showFormationField?: boolean;
+  formationLabel?: string;
+  defaultFormation?: string;
 };
 
 const formationOptions = [
@@ -14,7 +22,17 @@ const formationOptions = [
   "Je ne sais pas encore",
 ];
 
-export function ContactInquiryDialog({ trigger }: ContactInquiryDialogProps) {
+export function ContactInquiryDialog({
+  trigger,
+  title = "Demande de renseignements",
+  description = "Indiquez vos coordonnées et la formation qui vous intéresse. Nous reviendrons vers vous rapidement.",
+  messageLabel = "Message",
+  messagePlaceholder = "Votre demande, vos disponibilités ou vos questions...",
+  submitLabel = "Envoyer",
+  showFormationField = true,
+  formationLabel = "Formation souhaitée",
+  defaultFormation = "",
+}: ContactInquiryDialogProps) {
   const [open, setOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
   const [mounted, setMounted] = React.useState(false);
@@ -152,11 +170,10 @@ export function ContactInquiryDialog({ trigger }: ContactInquiryDialogProps) {
 
                 <div className="contact-dialog-header">
                   <h2 id={titleId} className="contact-dialog-title">
-                    Demande de renseignements
+                    {title}
                   </h2>
                   <p id={descriptionId} className="contact-dialog-description">
-            Indiquez vos coordonnées et la formation qui vous intéresse. Nous
-            reviendrons vers vous rapidement.
+                    {description}
                   </p>
                 </div>
 
@@ -196,27 +213,32 @@ export function ContactInquiryDialog({ trigger }: ContactInquiryDialogProps) {
                     </div>
                   </div>
 
-                  <div className="contact-dialog-field">
-                    <label htmlFor="contact-formation">
-                      Formation souhaitée
-                    </label>
-                    <select id="contact-formation" name="formation" required>
-                      <option value="">Sélectionnez une formation</option>
-                      {formationOptions.map((formation) => (
-                        <option key={formation} value={formation}>
-                          {formation}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                  {showFormationField ? (
+                    <div className="contact-dialog-field">
+                      <label htmlFor="contact-formation">{formationLabel}</label>
+                      <select
+                        id="contact-formation"
+                        name="formation"
+                        required
+                        defaultValue={defaultFormation}
+                      >
+                        <option value="">Sélectionnez une formation</option>
+                        {formationOptions.map((formation) => (
+                          <option key={formation} value={formation}>
+                            {formation}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  ) : null}
 
                   <div className="contact-dialog-field">
-                    <label htmlFor="contact-message">Message</label>
+                    <label htmlFor="contact-message">{messageLabel}</label>
                     <textarea
                       id="contact-message"
                       name="message"
                       rows={5}
-                      placeholder="Votre demande, vos disponibilités ou vos questions..."
+                      placeholder={messagePlaceholder}
                       required
                     />
                   </div>
@@ -230,7 +252,7 @@ export function ContactInquiryDialog({ trigger }: ContactInquiryDialogProps) {
                       Fermer
                     </button>
                     <button type="submit" className="contact-dialog-button primary">
-                      Envoyer
+                      {submitLabel}
                     </button>
                   </div>
                 </form>

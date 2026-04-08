@@ -49,12 +49,6 @@ export function Footer() {
               href="#"
               className="hover:text-white transition-colors duration-200"
             >
-              Contact
-            </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-200"
-            >
               Politique de confidentialité
             </a>
           </div>

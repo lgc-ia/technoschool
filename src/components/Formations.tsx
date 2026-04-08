@@ -9,23 +9,38 @@ const formations = [
     title: "Développement Web / Full Stack - BTS SIO",
     description:
       "Maîtrisez les technologies front-end et back-end pour créer des applications web modernes et performantes.",
+    detailBadge: "BTS SIO option SLAM",
+    detailContent: [
+      "Le BTS SIO option SLAM forme aux compétences essentielles du développement web et full stack : programmation, conception de bases de données, intégration front-end, développement back-end, cybersécurité, gestion de projet et maintenance applicative.",
+      "Une formation professionnalisante pour apprendre à concevoir des solutions numériques modernes, performantes et adaptées aux besoins des entreprises.",
+    ],
   },
   {
     icon: Database,
     title: "Data & IA",
     description:
       "Exploitez la puissance des données et de l'intelligence artificielle pour résoudre des problèmes complexes.",
+    detailBadge: "Parcours Data & IA",
+    detailContent: [
+      "Cette formation initie aux fondamentaux de la data et de l intelligence artificielle en abordant la collecte, l analyse et l exploitation des donnees, ainsi que les principes de base du machine learning, de l automatisation et des outils d aide a la decision.",
+      "Les apprenants developpent une comprehension concrete des usages de la data et de l IA dans les entreprises, avec une approche orientee pratique, innovation et resolution de problematiques reelles.",
+    ],
   },
   {
     icon: Shield,
     title: "Cybersécurité",
     description:
       "Protégez les systèmes et les données contre les menaces numériques avec des compétences en sécurité avancées.",
+    detailBadge: "Parcours Cybersécurité",
+    detailContent: [
+      "Cette formation aborde les fondamentaux de la cybersécurité en sensibilisant aux enjeux de protection des systèmes, des réseaux, des données et des utilisateurs.",
+      "Les apprenants découvrent les principales menaces informatiques, les bonnes pratiques de sécurité, la gestion des accès, la protection des environnements numériques et les bases de la prévention des cyberattaques.",
+    ],
   },
 ];
 
 export function Formations() {
-  const [open, setOpen] = React.useState(false);
+  const [selectedFormation, setSelectedFormation] = React.useState<(typeof formations)[number] | null>(null);
   const [isClosing, setIsClosing] = React.useState(false);
   const [mounted, setMounted] = React.useState(false);
   const dialogRef = React.useRef<HTMLDivElement>(null);
@@ -37,7 +52,7 @@ export function Formations() {
   }, []);
 
   React.useEffect(() => {
-    if (!open) {
+    if (!selectedFormation) {
       return;
     }
 
@@ -51,11 +66,11 @@ export function Formations() {
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [open]);
+  }, [selectedFormation]);
 
-  function openDialog() {
+  function openDialog(formation: (typeof formations)[number]) {
     setIsClosing(false);
-    setOpen(true);
+    setSelectedFormation(formation);
   }
 
   function closeDialog() {
@@ -86,7 +101,7 @@ export function Formations() {
           <div className="space-y-6">
             {formations.map((formation, index) => {
               const Icon = formation.icon;
-              const isClickable = index === 0;
+              const isClickable = Boolean(formation.detailContent);
 
               return (
                 <motion.div
@@ -99,13 +114,13 @@ export function Formations() {
                   style={{ cursor: "pointer" }}
                   role={isClickable ? "button" : undefined}
                   tabIndex={isClickable ? 0 : undefined}
-                  onClick={isClickable ? openDialog : undefined}
+                  onClick={isClickable ? () => openDialog(formation) : undefined}
                   onKeyDown={
                     isClickable
                       ? (event) => {
                           if (event.key === "Enter" || event.key === " ") {
                             event.preventDefault();
-                            openDialog();
+                            openDialog(formation);
                           }
                         }
                       : undefined
@@ -120,7 +135,7 @@ export function Formations() {
                         {formation.title}
                       </h3>
                       <p className="text-gray-400">{formation.description}</p>
-                      <span className="mt-4 inline-flex w-fit cursor-pointer items-center gap-2 whitespace-nowrap text-sm font-medium text-[#AD6BFF]">
+                      <span className="mt-4 inline-flex w-fit cursor-pointer items-center gap-3 whitespace-nowrap text-sm font-medium text-[#AD6BFF]">
                         <span className="whitespace-nowrap">Découvrir la formation</span>
                         <ArrowRight className="inline-block h-4 w-4 shrink-0" />
                       </span>
@@ -133,13 +148,13 @@ export function Formations() {
         </div>
       </section>
 
-      {mounted && open
+      {mounted && selectedFormation
         ? createPortal(
             <div
               className={`formation-detail-overlay ${isClosing ? "is-closing" : "is-opening"}`}
               onAnimationEnd={(event) => {
                 if (isClosing && event.target === event.currentTarget) {
-                  setOpen(false);
+                  setSelectedFormation(null);
                 }
               }}
               onMouseDown={(event) => {
@@ -181,23 +196,16 @@ export function Formations() {
                   </svg>
                 </button>
 
-                <div className="formation-detail-badge">BTS SIO option SLAM</div>
+                <div className="formation-detail-badge">
+                  {selectedFormation.detailBadge}
+                </div>
                 <h3 id={titleId} className="formation-detail-title">
-                  Développement Web / Full Stack - BTS SIO
+                  {selectedFormation.title}
                 </h3>
                 <div id={descriptionId} className="formation-detail-body">
-                  <p>
-                    Le BTS SIO option SLAM forme aux compétences essentielles
-                    du développement web et full stack : programmation,
-                    conception de bases de données, intégration front-end,
-                    développement back-end, cybersécurité, gestion de projet et
-                    maintenance applicative.
-                  </p>
-                  <p>
-                    Une formation professionnalisante pour apprendre à
-                    concevoir des solutions numériques modernes, performantes
-                    et adaptées aux besoins des entreprises.
-                  </p>
+                  {selectedFormation.detailContent?.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
               </div>
             </div>,

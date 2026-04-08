@@ -137,7 +137,17 @@ export function ContactInquiryDialog({ trigger }: ContactInquiryDialogProps) {
                   aria-label="Fermer la modale"
                   onClick={closeDialog}
                 >
-                  ×
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.25"
+                    strokeLinecap="round"
+                  >
+                    <path d="M6 6l12 12" />
+                    <path d="M18 6l-12 12" />
+                  </svg>
                 </button>
 
                 <div className="contact-dialog-header">

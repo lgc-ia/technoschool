@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -h \"^import.*from.*@/\" /d/1-cours-Web/1-LGC-classroom-studio-product/1-projet-lgc-py-nextJs/31-techschool-lgc/src/components/*.tsx)"
+    ]
+  }
+}

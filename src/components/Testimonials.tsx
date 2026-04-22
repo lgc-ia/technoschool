@@ -6,7 +6,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "La TechSchool m'a permis de me reconvertir dans la tech. Les formateurs sont passionnés et le programme est très complet.",
+      "La TechnoSchool m'a permis de me reconvertir dans la tech. Les formateurs sont passionnés et le programme est très complet.",
     name: "Mercier William",
     role: "Développeuse Full-Stack",
   },

@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const repoName = 'LGC-techSchool';
+const repoName = 'technoschool';
 const isProd = process.env.NODE_ENV === 'production';
 
 // Optional env-based configuration to avoid impacting root-domain deployments.
-// - Set NEXT_PUBLIC_BASE_PATH or BASE_PATH to an explicit subpath (e.g. "/LGC-techSchool").
-// - Or set GITHUB_PAGES=true to auto-use "/LGC-techSchool" in production.
+// - Set NEXT_PUBLIC_BASE_PATH or BASE_PATH to an explicit subpath (e.g. "/technoschool").
+// - Or set GITHUB_PAGES=true to auto-use "/technoschool" in production.
 const explicitBasePath = process.env.NEXT_PUBLIC_BASE_PATH || process.env.BASE_PATH;
 const computedBasePath = explicitBasePath ?? (isProd && process.env.GITHUB_PAGES === 'true' ? `/${repoName}` : '');
 

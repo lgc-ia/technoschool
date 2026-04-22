@@ -1,4 +1,4 @@
-# Futuristic Tech School Landing Page
+# TechnoSchool Landing Page
 
 ![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -7,7 +7,7 @@
 ![Lucide](https://img.shields.io/badge/Lucide-F56565?style=for-the-badge&logo=lucide&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-> Projet TechSchool LGC – landing page Next.js (App Router)
+> Projet TechnoSchool LGC – landing page Next.js (App Router)
 
 ## Stack technique
 
@@ -34,7 +34,7 @@ npm run dev          # http://localhost:3000
 ## Structure du projet
 
 ```
-techschool/
+technoschool/
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx      # layout racine (Server Component) + metadata + favicons
@@ -66,9 +66,9 @@ La page assemble, dans l'ordre : `Nav` → `Hero` → `Formations` → `Team` �
 
 ## Déploiement sous un sous-chemin (ex. GitHub Pages)
 
-Le site peut être servi sous un sous-chemin (ex. `/LGC-techSchool`). Configuration via variables d'environnement au build :
+Le site peut être servi sous un sous-chemin (ex. `/technoschool`). Configuration via variables d'environnement au build :
 
-- `GITHUB_PAGES=true` en production → active automatiquement `/LGC-techSchool`.
+- `GITHUB_PAGES=true` en production → active automatiquement `/technoschool`.
 - `NEXT_PUBLIC_BASE_PATH=/chemin` (ou `BASE_PATH=/chemin`) → définit un sous-chemin explicite.
 
 Quand un `basePath` est défini, les images Next sont servies en mode `unoptimized` (compatibles hébergement statique).

@@ -1759,3 +1759,18 @@ html{scroll-behavior:smooth}
 /* Events "En savoir plus" hover — translate whole button */
 .event-cta{transition:transform .3s ease-in-out,color .3s ease}
 .group:hover .event-cta{transform:translateX(.5rem)}
+
+/* Hero section */
+.hero-section{background-color:#0a0514;overflow:hidden}
+.hero-wave-overlay{position:absolute;inset:0;pointer-events:none;opacity:0.5}
+.hero-gradient-border{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,#d946ef 0%,#a855f7 50%,#7c3aed 100%);pointer-events:none}
+.hero-gradient-text{background:linear-gradient(to right,#8CA3FF,#D9A8FF);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 12px rgba(140,163,255,.45))}
+
+/* Shared section scroll margin */
+.section-scroll-margin{scroll-margin-top:6rem}
+
+/* CTA button top margin */
+.cta-btn-mt{margin-top:3rem}
+
+/* Footer copyright padding */
+.footer-copyright{padding-top:4rem;padding-bottom:2rem}

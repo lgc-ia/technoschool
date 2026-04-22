@@ -73,7 +73,7 @@ const team = [
 
 export function Team() {
   return (
-    <section id="team" className="py-20 px-6 bg-black/60" style={{ scrollMarginTop: "6rem" }}>
+    <section id="team" className="section-scroll-margin py-20 px-6 bg-black/60">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

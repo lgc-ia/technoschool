@@ -8,8 +8,7 @@ import { ContactInquiryDialog } from "./ContactInquiryDialog";
 export function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center px-6 py-20"
-      style={{ backgroundColor: "#0a0514", overflow: "hidden" }}
+      className="hero-section relative min-h-screen flex items-center justify-center px-6 py-20"
     >
       {/* Ambient orbs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -19,14 +18,7 @@ export function Hero() {
       </div>
 
       {/* Wavy bands */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          opacity: 0.5,
-        }}
-      >
+      <div className="hero-wave-overlay">
         <svg
           width="100%"
           height="100%"
@@ -62,18 +54,7 @@ export function Hero() {
       <Particles count={90} />
 
       {/* Gradient bottom border */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          background:
-            "linear-gradient(90deg, #d946ef 0%, #a855f7 50%, #7c3aed 100%)",
-          pointerEvents: "none",
-        }}
-      />
+      <div className="hero-gradient-border" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
@@ -84,28 +65,12 @@ export function Hero() {
           className="text-3xl md:text-5xl leading-tight"
         >
           Développez votre{" "}
-          <span
-            style={{
-              background: "linear-gradient(to right, #8CA3FF, #D9A8FF)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              filter: "drop-shadow(0 0 12px rgba(140,163,255,.45))",
-            }}
-          >
+          <span className="hero-gradient-text">
             expertise Tech LGC
           </span>
           <br />
           programmez votre{" "}
-          <span
-            style={{
-              background: "linear-gradient(to right, #8CA3FF, #D9A8FF)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              filter: "drop-shadow(0 0 12px rgba(140,163,255,.45))",
-            }}
-          >
+          <span className="hero-gradient-text">
             avenir
           </span>
         </motion.h1>

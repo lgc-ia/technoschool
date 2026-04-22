@@ -1,6 +1,6 @@
-# Futuristic Tech School Landing Page
+# Futuristic Techno School Landing Page
 
-> Projet TechSchool LGC – version Next.js
+> Projet TechnoSchool LGC – version Next.js
 
 ## Détails techniques
 

@@ -65,7 +65,7 @@ export function Footer() {
           className="mt-8 border-t border-gray-900 text-center text-sm text-gray-500"
           style={{ paddingTop: "4rem", paddingBottom: "2rem" }}
         >
-          © {year} TechnoSchool — Recherche &amp; Développement, tous droits réservés.
+          © {year}&nbsp;TechnoSchool — Recherche &amp; Développement, tous droits réservés.
         </div>
       </div>
     </footer>

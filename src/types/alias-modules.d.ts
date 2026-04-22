@@ -1,3 +1,6 @@
+// Declare CSS file imports as side-effect modules
+declare module "*.css";
+
 // Map version-suffixed imports to their real packages for TypeScript
 
 declare module 'vaul@1.1.2' { export * from 'vaul'; }

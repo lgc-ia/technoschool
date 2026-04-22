@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Futuristic Tech School Landing Page",
+  title: "Technoschool - lgc - R&D",
   description: "Landing page migrée vers Next.js",
   icons: {
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],

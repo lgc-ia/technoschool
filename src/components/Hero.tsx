@@ -12,9 +12,9 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-5xl leading-tight"
         >
-          TechnoSchool{" "}
+          Technoschool{" "}
           <span className="bg-gradient-to-r from-[#5C6FFF] to-[#AD6BFF] bg-clip-text text-transparent">
-            - LGC R&D
+            - lgc - R&D
           </span>
           <br />
           programmez votre{" "}
@@ -29,7 +29,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
         >
-          La grande classe TechnoSchool forme celles et ceux qui construisent le monde
+          La grande classe Technoschool - lgc - R&D forme celles et ceux qui construisent le monde
           digital de demain.
         </motion.p>
 

@@ -82,7 +82,7 @@ export function Team() {
         >
           La Team La grande classe &amp; 
               <span className="bg-gradient-to-r from-[#5C6FFF] to-[#AD6BFF] bg-clip-text text-transparent">
-                &nbsp;TechnoSchool - R&D
+                &nbsp;Technoschool - lgc - R&D
             </span>
         </motion.h2>
 

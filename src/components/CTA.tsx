@@ -31,6 +31,7 @@ export function CTA() {
           showFormationField={false}
           trigger={
             <button
+              type="button"
               className="px-10 py-5 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white btn-rounded shadow-[0_0_30px_rgba(92,111,255,0.5)] transition-all duration-300 text-lg"
               style={{ marginTop: "3rem" }}
             >

@@ -106,7 +106,7 @@ export function Hero() {
               filter: "drop-shadow(0 0 12px rgba(140,163,255,.45))",
             }}
           >
-            avenir !
+            avenir
           </span>
         </motion.h1>
 
@@ -127,7 +127,7 @@ export function Hero() {
         >
           <ContactInquiryDialog
             trigger={
-              <button className="px-8 py-4 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white rounded-full shadow-[0_0_30px_rgba(92,111,255,0.5)] transition-all duration-300">
+              <button type="button" className="px-8 py-4 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white rounded-full shadow-[0_0_30px_rgba(92,111,255,0.5)] transition-all duration-300">
                 Découvrir nos formations
               </button>
             }

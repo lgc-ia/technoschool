@@ -54,7 +54,7 @@ export function Events() {
                   <h3 className="text-2xl mb-2">{event.title}</h3>
                   <p className="text-gray-400">{event.description}</p>
                 </div>
-                <button className="event-cta flex items-center gap-2 text-[#5C6FFF] hover:text-[#AD6BFF]">
+                <button type="button" className="event-cta flex items-center gap-2 text-[#5C6FFF] hover:text-[#AD6BFF]">
                   En savoir plus
                   <ArrowRight className="w-5 h-5" />
                 </button>

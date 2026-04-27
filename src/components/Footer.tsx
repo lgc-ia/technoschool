@@ -6,6 +6,16 @@ import { useState } from "react";
 export function Footer() {
   const year = new Date().getFullYear();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const closeModal = () => {
+    if (isClosing) return;
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setIsClosing(false);
+    }, 600);
+  };
 
   return (
     <>
@@ -76,10 +86,12 @@ export function Footer() {
       {/* Modal Mentions légales */}
       {isModalOpen && (
         <div
+          className={isClosing ? "modal-overlay-closing" : "modal-overlay"}
           style={{ position: "fixed", inset: 0, zIndex: 9999, backgroundColor: "rgba(0,0,0,0.85)", display: "flex", alignItems: "center", justifyContent: "center", padding: "0 1rem" }}
-          onClick={() => setIsModalOpen(false)}
+          onClick={() => closeModal()}
         >
           <div
+            className={isClosing ? "modal-panel-closing" : "modal-panel"}
             style={{ width: "750px", maxWidth: "100%", backgroundColor: "#0a0a0f", border: "1px solid #1f2937", borderRadius: "1rem", boxShadow: "0 25px 60px rgba(0,0,0,1)", overflow: "hidden", position: "relative" }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -90,7 +102,7 @@ export function Footer() {
               </h2>
               <button
                 type="button"
-                onClick={() => setIsModalOpen(false)}
+                onClick={() => closeModal()}
                 className="p-1.5 rounded-lg text-gray-500 hover:text-white hover:bg-gray-800 transition-colors"
                 aria-label="Fermer"
               >
@@ -130,7 +142,7 @@ export function Footer() {
             <div className="px-6 py-4 border-t border-gray-800 flex justify-end">
               <button
                 type="button"
-                onClick={() => setIsModalOpen(false)}
+                onClick={() => closeModal()}
                 className="px-4 py-2 text-sm rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
               >
                 Fermer

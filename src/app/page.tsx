@@ -8,6 +8,7 @@ import { Events } from "../components/Events";
 import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
 import { Particles } from "../components/Particles";
+import { ChatBot } from "../components/ChatBot";
 
 export default function Page() {
   return (
@@ -40,6 +41,7 @@ export default function Page() {
         <Particles count={50} size={3.5} />
       </div>
 
+      <ChatBot />
       <Nav />
       <div className="relative z-10 pt-16">
         <Hero />

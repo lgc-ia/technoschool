@@ -120,20 +120,24 @@ export function Footer() {
                   Le présent espace <strong>LGC Recherche Développement</strong> est édité par :
                 </p>
                 <div className="bg-gray-900 rounded-xl p-4 space-y-2.5">
-                  <p className="font-semibold text-white">LGC Recherche et Développement</p>
+                  <p className="font-semibold text-white">
+                    <strong>LGC Recherche et Développement</strong>
+                  </p>
                   <div className="w-full h-px bg-gray-800" />
-                  <div className="space-y-1.5 text-gray-400">
-                    <p>SAS – Société par actions simplifiée</p>
-                    <p>51 rue Gaston Lauriau, 93100 Montreuil</p>
-                    <p>
+                  <ul className="divide-y divide-gray-800 text-gray-400">
+                    <li className="py-1.5">SAS : Société par actions simplifiée</li>
+                    <li className="py-1.5">51 rue Gaston Lauriau, 93100 Montreuil</li>
+                    <li className="py-1.5">Directeur : Ismaëla Niang</li>
+                    <li className="py-1.5">Téléphone : 01 40 10 27 22</li>
+                    <li className="py-1.5">
                       <span className="text-gray-500">SIRET</span>{" "}
                       882 626 229 00026
-                    </p>
-                    <p>
+                    </li>
+                    <li className="py-1.5">
                       <span className="text-gray-500">Code APE</span>{" "}
                       72.19Z – R&amp;D en autres sciences physiques et naturelles
-                    </p>
-                  </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

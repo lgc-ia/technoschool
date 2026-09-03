@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { ContactInquiryDialog } from "./ContactInquiryDialog";
 
 export function Nav(): React.JSX.Element {
   const [active, setActive] = useState<string>("");
@@ -84,6 +86,29 @@ export function Nav(): React.JSX.Element {
       <div className="site-nav-inner">
         <button
           type="button"
+          className="site-nav-brand"
+          aria-label="Retour en haut de la page"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            if (history.replaceState) history.replaceState(null, "", "#");
+          }}
+        >
+          <Image
+            src="/favicon/logo-lgc-TS.png"
+            alt=""
+            width={28}
+            height={28}
+            className="site-nav-brand-logo"
+            aria-hidden="true"
+          />
+          <span>
+            Techno<span className="site-nav-brand-accent">School</span>
+          </span>
+        </button>
+
+        <button
+          type="button"
           className="site-nav-toggle"
           aria-label="Ouvrir le menu"
           aria-haspopup="true"
@@ -133,6 +158,14 @@ export function Nav(): React.JSX.Element {
             Événements
           </a>
         </div>
+
+        <ContactInquiryDialog
+          trigger={
+            <button type="button" className="site-nav-cta">
+              Nous rejoindre
+            </button>
+          }
+        />
       </div>
     </nav>
   );

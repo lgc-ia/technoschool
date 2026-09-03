@@ -75,18 +75,21 @@ export function Team() {
   return (
     <section id="team" className="section-scroll-margin py-20 px-6 bg-black/60">
       <div className="max-w-6xl mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl text-center mb-16"
+          className="section-intro"
         >
-          La Team La grande classe &amp; 
-              <span className="bg-gradient-to-r from-[#5C6FFF] to-[#AD6BFF] bg-clip-text text-transparent">
-                &nbsp;TechnoSchool - R&D
+          <span className="eyebrow">La Team</span>
+          <h2 className="section-title">
+            La Team La grande classe &amp;
+            <span className="bg-gradient-to-r from-[#5C6FFF] to-[#AD6BFF] bg-clip-text text-transparent">
+              &nbsp;TechnoSchool - R&D
             </span>
-        </motion.h2>
+          </h2>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (

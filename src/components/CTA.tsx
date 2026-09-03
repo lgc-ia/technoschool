@@ -17,7 +17,7 @@ export function CTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-4xl mx-auto text-center space-y-8"
+        className="relative z-10 cta-card space-y-8"
       >
         <h2 className="text-4xl md:text-6xl">
           Envie de développer le numérique de demain ?

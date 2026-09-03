@@ -215,15 +215,16 @@ export function Formations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="section-intro"
           >
-            <h2 className="text-4xl md:text-5xl mb-4">Nos formations</h2>
-            <p className="text-lg text-gray-400">
+            <span className="eyebrow">Nos formations</span>
+            <h2 className="section-title">Choisissez votre voie tech</h2>
+            <p className="section-subtitle">
               Des cursus complets en développement web, data et cybersécurité.
             </p>
           </motion.div>
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {formations.map((formation, index) => {
               const Icon = formation.icon;
               const isClickable = Boolean(formation.detailContent);
@@ -231,11 +232,11 @@ export function Formations() {
               return (
                 <motion.div
                   key={formation.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`group bg-gradient-to-r from-gray-900/80 to-gray-800/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 transition-all duration-300 hover:border-[#5C6FFF] hover:shadow-[0_0_30px_rgba(92,111,255,0.3)]`}
+                  className="group formation-card"
                   style={{ cursor: "pointer" }}
                   role={isClickable ? "button" : undefined}
                   tabIndex={isClickable ? 0 : undefined}
@@ -251,21 +252,15 @@ export function Formations() {
                       : undefined
                   }
                 >
-                  <div className="flex items-center gap-6">
-                    <div className="p-4 bg-gradient-to-br from-[#5C6FFF] to-[#AD6BFF] rounded-xl group-hover:shadow-[0_0_20px_rgba(92,111,255,0.5)] transition-shadow duration-300">
-                      <Icon className="w-8 h-8" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className={isClickable ? "mb-2 text-2xl cursor-pointer" : "mb-2 text-2xl"}>
-                        {formation.title}
-                      </h3>
-                      <p className="text-gray-400">{formation.description}</p>
-                      <span className="mt-4 inline-flex w-fit cursor-pointer items-center gap-3 whitespace-nowrap text-sm font-medium text-[#AD6BFF]">
-                        <span className="whitespace-nowrap">Découvrir la formation</span>
-                        <ArrowRight className="inline-block h-4 w-4 shrink-0" />
-                      </span>
-                    </div>
+                  <div className="formation-card-icon">
+                    <Icon className="w-6 h-6" />
                   </div>
+                  <h3 className="formation-card-title">{formation.title}</h3>
+                  <p className="formation-card-desc">{formation.description}</p>
+                  <span className="formation-card-link">
+                    Découvrir la formation
+                    <ArrowRight className="inline-block h-4 w-4" />
+                  </span>
                 </motion.div>
               );
             })}

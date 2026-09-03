@@ -46,7 +46,7 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 export function Statistics() {
   return (
     <section className="py-20 px-6 bg-black/60">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto stats-panel">
         <div className="stats-container">
           {stats.map((stat, index) => (
             <Fragment key={stat.label}>

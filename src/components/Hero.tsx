@@ -1,9 +1,17 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
+import { Code2, Database, Shield } from "lucide-react";
 import { Particles } from "./Particles";
 
 import { ContactInquiryDialog } from "./ContactInquiryDialog";
+
+const heroBadges = [
+  { icon: Code2, label: "Développement Web / Full Stack", accent: "#22d3ee" },
+  { icon: Database, label: "Data & IA", accent: "#AD6BFF" },
+  { icon: Shield, label: "Cybersécurité", accent: "#5C6FFF" },
+];
 
 export function Hero() {
   return (
@@ -17,39 +25,6 @@ export function Hero() {
         <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-violet-600 rounded-full opacity-20 blur-[120px]" />
       </div>
 
-      {/* Wavy bands */}
-      <div className="hero-wave-overlay">
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 1200 800"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient
-              id="hero-wave-gradient"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="0%"
-            >
-              <stop offset="0%" stopColor="#d946ef" stopOpacity="0.7" />
-              <stop offset="50%" stopColor="#7e22ce" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#4c1d95" stopOpacity="0.7" />
-            </linearGradient>
-          </defs>
-          <g fill="none" stroke="url(#hero-wave-gradient)" strokeWidth="0.6">
-            {Array.from({ length: 24 }).map((_, i) => (
-              <path
-                key={i}
-                d={`M0,${i * 36 + 12} Q300,${i * 36 - 24} 600,${i * 36 + 48} T1200,${i * 36 + 12}`}
-              />
-            ))}
-          </g>
-        </svg>
-      </div>
-
       {/* Floating particles */}
       <Particles count={90} />
 
@@ -57,46 +32,86 @@ export function Hero() {
       <div className="hero-gradient-border" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl leading-tight"
-        >
-          Développez votre{" "}
-          <span className="hero-gradient-text">
-            expertise Tech LGC
-          </span>
-          <br />
-          programmez votre{" "}
-          <span className="hero-gradient-text">
-            avenir
-          </span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
-        >
-          La grande classe TechnoSchool forme celles et ceux qui construisent le monde
-          digital de demain.
-        </motion.p>
-
+      <div className="hero-inner">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8 }}
+          className="hero-copy"
         >
-          <ContactInquiryDialog
-            trigger={
-              <button type="button" className="px-8 py-4 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white rounded-full shadow-[0_0_30px_rgba(92,111,255,0.5)] transition-all duration-300">
-                Découvrir nos formations
-              </button>
-            }
-          />
+          <span className="eyebrow hero-eyebrow">LGC · TechnoSchool</span>
+
+          <h1 className="hero-title text-3xl md:text-5xl leading-tight">
+            Développez votre{" "}
+            <span className="hero-gradient-text">
+              expertise Tech LGC
+            </span>
+            <br />
+            programmez votre{" "}
+            <span className="hero-gradient-text">
+              avenir
+            </span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-gray-300" style={{ marginTop: "1.5rem" }}>
+            La grande classe TechnoSchool forme celles et ceux qui construisent le monde
+            digital de demain.
+          </p>
+
+          <div className="hero-badges">
+            {heroBadges.map((badge) => {
+              const Icon = badge.icon;
+              return (
+                <div className="hero-badge" key={badge.label}>
+                  <span
+                    className="hero-badge-icon"
+                    style={{ background: `${badge.accent}22`, color: badge.accent }}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </span>
+                  {badge.label}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="hero-actions">
+            <ContactInquiryDialog
+              trigger={
+                <button type="button" className="px-8 py-4 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white btn-rounded shadow-[0_0_30px_rgba(92,111,255,0.5)] transition-all duration-300">
+                  Découvrir nos formations
+                </button>
+              }
+            />
+            <a href="#events" className="hero-btn-secondary">
+              Voir les événements
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="hero-visual"
+        >
+          <motion.div
+            animate={{ y: [0, -16, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="hero-visual-glow" aria-hidden="true" />
+            <div className="hero-visual-frame">
+              <Image
+                src="/asset/lgc-miniature-technoschool.png"
+                alt="TechnoSchool — La Grande Classe R&D"
+                width={1600}
+                height={900}
+                priority
+                sizes="(max-width: 1024px) 90vw, 32rem"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

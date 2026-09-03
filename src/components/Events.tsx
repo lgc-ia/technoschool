@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Calendar, ArrowRight, X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import Image from "next/image";
 
 const events = [
@@ -22,6 +22,16 @@ const events = [
     description: "24h pour relever des défis de sécurité informatique.",
   },
 ];
+
+function EventDateBadge({ date }: { date: string }) {
+  const [day, month] = date.split(" ");
+  return (
+    <div className="event-date-badge">
+      <span className="event-date-day">{day}</span>
+      <span className="event-date-month">{month}</span>
+    </div>
+  );
+}
 
 export function Events() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -44,15 +54,16 @@ export function Events() {
     <>
     <section id="events" className="section-scroll-margin py-20 px-6 bg-black/60">
       <div className="max-w-6xl mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl text-center mb-16 bg-gradient-to-r from-[#5C6FFF] via-[#AD6BFF] to-[#FF9966] bg-clip-text text-transparent"
+          className="section-intro"
         >
-          Prochains événements
-        </motion.h2>
+          <span className="eyebrow">Événements</span>
+          <h2 className="section-title">Prochains événements</h2>
+        </motion.div>
 
         <div className="space-y-6">
           {events.map((event, index) => (
@@ -65,13 +76,12 @@ export function Events() {
               className="group bg-gradient-to-r from-gray-900/80 to-gray-800/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 hover:border-[#5C6FFF] hover:shadow-[0_0_30px_rgba(92,111,255,0.2)] transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Calendar className="w-5 h-5 text-[#5C6FFF]" />
-                    <span className="text-[#5C6FFF]">{event.date}</span>
+                <div className="event-row flex-1">
+                  <EventDateBadge date={event.date} />
+                  <div>
+                    <h3 className="text-2xl mb-2">{event.title}</h3>
+                    <p className="text-gray-400">{event.description}</p>
                   </div>
-                  <h3 className="text-2xl mb-2">{event.title}</h3>
-                  <p className="text-gray-400">{event.description}</p>
                 </div>
                 <button type="button" onClick={openModal} className="event-cta flex items-center gap-2 text-[#5C6FFF] hover:text-[#AD6BFF]">
                   En savoir plus

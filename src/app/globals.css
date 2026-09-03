@@ -1777,6 +1777,120 @@ html{scroll-behavior:smooth}
 /* Footer copyright padding */
 .footer-copyright{padding-top:4rem;padding-bottom:2rem}
 
+/* ── Charte graphique 2026 — refonte visuelle ───────────────── */
+
+/* Section intro (eyebrow + title + subtitle), shared across sections */
+.eyebrow{
+  display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#a5b4fc;
+}
+.section-intro{text-align:center;max-width:42rem;margin:0 auto 4rem}
+.section-intro .eyebrow{display:block;margin-bottom:.85rem}
+.section-title{font-size:2.1rem;line-height:1.2;font-weight:700;color:#fff;margin-bottom:.9rem}
+@media(min-width:768px){.section-title{font-size:2.6rem}}
+.section-subtitle{color:#9ca3af;font-size:1.05rem;line-height:1.6}
+
+/* Nav: brand + join CTA */
+.site-nav-inner{justify-content:space-between}
+.site-nav-brand{display:flex;align-items:center;gap:.6rem;color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;flex-shrink:0;cursor:pointer;background:none;border:none;padding:0}
+.site-nav-brand-logo{border-radius:.45rem;flex-shrink:0;display:block}
+.site-nav-brand-accent{background:linear-gradient(90deg,#8CA3FF,#D9A8FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(min-width:768px){.site-nav-links{flex:1;display:flex;justify-content:center}}
+.site-nav-cta{
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;white-space:nowrap;
+  padding:.6rem 1.25rem;border-radius:9999px;font-size:.88rem;font-weight:600;color:#fff;
+  background:linear-gradient(135deg,#5C6FFF,#AD6BFF);box-shadow:0 0 18px rgba(92,111,255,.4);
+  transition:box-shadow .2s ease,transform .2s ease;cursor:pointer;border:none;
+}
+.site-nav-cta:hover{box-shadow:0 0 26px rgba(92,111,255,.6);transform:translateY(-1px)}
+@media(max-width:767px){.site-nav-cta{display:none}}
+
+/* Hero: split layout (copy + visual) */
+.hero-inner{position:relative;z-index:10;max-width:72rem;margin:0 auto;display:flex;flex-direction:column;gap:3rem;align-items:center;text-align:center}
+@media(min-width:1024px){.hero-inner{flex-direction:row;align-items:center;gap:3.5rem;text-align:left}}
+.hero-copy{flex:1;min-width:0;max-width:40rem}
+.hero-eyebrow{display:block;margin-bottom:1rem}
+.hero-title{font-weight:800}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem;justify-content:center}
+@media(min-width:1024px){.hero-badges{justify-content:flex-start}}
+.hero-badge{
+  display:flex;align-items:center;gap:.65rem;padding:.75rem 1.05rem;border-radius:1rem;
+  border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:#e5e7eb;font-size:.88rem;font-weight:600;
+  transition:border-color .2s ease,transform .2s ease;
+}
+.hero-badge:hover{border-color:rgba(92,111,255,.5);transform:translateY(-2px)}
+.hero-badge-icon{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:.6rem;flex-shrink:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.5rem;justify-content:center}
+@media(min-width:1024px){.hero-actions{justify-content:flex-start}}
+.hero-btn-secondary{
+  display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.9rem;border-radius:9999px;
+  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#fff;font-weight:600;
+  text-decoration:none;transition:border-color .2s ease,background .2s ease;
+}
+.hero-btn-secondary:hover{border-color:rgba(173,107,255,.55);background:rgba(255,255,255,.08)}
+.hero-visual{position:relative;flex:1;width:100%;max-width:32rem}
+.hero-visual-glow{position:absolute;inset:-2.5rem;background:radial-gradient(circle,rgba(92,111,255,.35),transparent 70%);filter:blur(40px);z-index:-1}
+.hero-visual-frame{
+  position:relative;border-radius:1.75rem;overflow:hidden;border:1px solid rgba(173,107,255,.35);
+  box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(92,111,255,.22);
+}
+.hero-visual-frame img{display:block;width:100%;height:auto}
+
+/* Statistics: glow panel */
+.stats-panel{
+  position:relative;border-radius:1.75rem;padding:2.75rem 1.5rem;overflow:hidden;
+  border:1px solid rgba(173,107,255,.18);
+  background:radial-gradient(120% 180% at 50% 0%,rgba(173,107,255,.16),transparent 60%),rgba(255,255,255,.02);
+}
+
+/* Formations: card grid */
+.formation-card{
+  position:relative;display:flex;flex-direction:column;height:100%;
+  padding:2rem;border-radius:1.25rem;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(160deg,rgba(17,24,39,.8),rgba(31,41,55,.45));
+  backdrop-filter:blur(6px);
+  transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease;
+}
+.formation-card:hover{border-color:#5C6FFF;box-shadow:0 0 30px rgba(92,111,255,.28);transform:translateY(-4px)}
+.formation-card-icon{
+  display:flex;align-items:center;justify-content:center;width:3rem;height:3rem;border-radius:.85rem;
+  margin-bottom:1.5rem;background:linear-gradient(135deg,#5C6FFF,#AD6BFF);
+  box-shadow:0 0 20px rgba(92,111,255,.35);flex-shrink:0;
+}
+.formation-card-title{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.75rem;line-height:1.3}
+.formation-card-desc{color:#9ca3af;font-size:.95rem;line-height:1.6;flex:1}
+.formation-card-link{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;color:#AD6BFF;font-size:.9rem;font-weight:600;
+  transition:gap .3s ease,color .3s ease;
+}
+.group:hover .formation-card-link{gap:.85rem;color:#c4b5fd}
+
+/* Events: date badge */
+.event-date-badge{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;
+  width:4rem;height:4rem;border-radius:1rem;
+  background:linear-gradient(135deg,rgba(92,111,255,.18),rgba(173,107,255,.14));
+  border:1px solid rgba(173,107,255,.3);
+}
+.event-date-day{font-size:1.35rem;font-weight:700;color:#fff;line-height:1.1}
+.event-date-month{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c4b5fd}
+.event-row{display:flex;align-items:center;gap:1.5rem}
+
+/* Testimonials: avatar + name row */
+.testimonial-avatar{width:2.75rem;height:2.75rem;border-radius:50%;overflow:hidden;flex-shrink:0}
+.testimonial-person{display:flex;align-items:center;gap:.85rem}
+.testimonial-name{color:#fff;font-weight:600}
+
+/* Final CTA: bordered card */
+.cta-card{
+  position:relative;max-width:56rem;margin:0 auto;padding:3.25rem 2rem;border-radius:2rem;
+  border:1px solid rgba(173,107,255,.25);
+  background:linear-gradient(160deg,rgba(92,111,255,.14),rgba(173,107,255,.08) 60%,rgba(10,5,20,.35));
+  text-align:center;
+}
+@media(min-width:768px){.cta-card{padding:4rem 3rem}}
+
 /* ── ChatBot ─────────────────────────────────────────────── */
 @keyframes chatbot-in{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes chatbot-out{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(20px) scale(.96)}}

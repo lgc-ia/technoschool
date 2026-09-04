@@ -28,21 +28,12 @@ export const metadata: Metadata = {
     description:
       "Formations en développement web Full Stack (BTS SIO), Data & IA et Cybersécurité à Montreuil.",
     locale: "fr_FR",
-    images: [
-      {
-        url: `${SITE_URL}/favicon/logo-lgc-TS.png`,
-        width: 512,
-        height: 512,
-        alt: "TechnoSchool — LGC R&D · Formations numériques à Montreuil",
-      },
-    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "TechnoSchool - LGC R&D",
     description:
       "Formations en développement web Full Stack (BTS SIO), Data & IA et Cybersécurité à Montreuil.",
-    images: [`${SITE_URL}/favicon/logo-lgc-TS.png`],
   },
 };
 

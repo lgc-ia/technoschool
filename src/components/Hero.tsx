@@ -5,7 +5,8 @@ import Image from "next/image";
 import { Code2, Database, Shield } from "lucide-react";
 import { Particles } from "./Particles";
 
-import { ContactInquiryDialog } from "./ContactInquiryDialog";
+// import { ContactInquiryDialog } from "./ContactInquiryDialog";
+import { EXTERNAL_FORM_URL } from "@/lib/constants";
 
 const heroBadges = [
   { icon: Code2, label: "Développement Web / Full Stack", accent: "#22d3ee" },
@@ -76,13 +77,21 @@ export function Hero() {
           </div>
 
           <div className="hero-actions">
-            <ContactInquiryDialog
+            {/* <ContactInquiryDialog
               trigger={
                 <button type="button" className="px-8 py-4 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white btn-rounded shadow-[0_0_30px_rgba(92,111,255,0.5)] transition-all duration-300">
                   Découvrir nos formations
                 </button>
               }
-            />
+            /> */}
+            <a
+              href={EXTERNAL_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-[#5C6FFF] hover:bg-[#4D5FEF] text-white btn-rounded shadow-[0_0_30px_rgba(92,111,255,0.5)] transition-all duration-300"
+            >
+              Découvrir nos formations
+            </a>
             <a href="#events" className="hero-btn-secondary">
               Voir les événements
             </a>

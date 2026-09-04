@@ -14,7 +14,7 @@ const team = [
   },
   {
     name: "William Mercier",
-    role: "Devops R&D",
+    role: "Chef de projet junior R&D",
     image: "/asset/willy.png",
   },
   {
@@ -28,8 +28,8 @@ const team = [
     image: "/asset/gius.png"
   },
    {
-    name: "Diae Bootia El Oumani",
-    role: "Résponsable juridique de direction",
+    name: "Diae Bootia El Oumami",
+    role: "Responsable Juridique à la Direction",
     image: "/asset/diae.png"
   },
     {
@@ -37,33 +37,14 @@ const team = [
     role: "Responsable formation",
     image: "/asset/anna.png"
   },
-     {
-    name: "Jawad M",
-    role: "Relation entreprise",
-    image: "/asset/avatar.svg"
-  },
-     {
-    name: "Amel Benhamdi",
-    role: "Pôle petite enfance",
-    image: "/asset/amel.png"
-  },
-      {
-    name: "Selma Daramus",
-    role: "Formatrice de français",
-    image: "/asset/avatar.svg"
-  },
       {
     name: "Sarah Benyoussef",
     role: "Chargée d'admission",
     image: "/asset/sarah.png"
   },
-       {
-    name: "Sophie Armand",
-    role: "Formatrice petite enfance",
-    image: "/asset/sophie.png"
-  },
+ 
       {
-    name: "Morin Maude",
+    name: "Morin Maud",
     role: "Chargée de formation",
     image: "/asset/avatar.svg"
   },

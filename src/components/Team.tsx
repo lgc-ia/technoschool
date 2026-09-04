@@ -29,7 +29,7 @@ const team = [
   },
    {
     name: "Diae Bootia El Oumani",
-    role: "Juriste & RH",
+    role: "Résponsable juridique de direction",
     image: "/asset/diae.png"
   },
     {

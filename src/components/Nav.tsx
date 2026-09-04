@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ContactInquiryDialog } from "./ContactInquiryDialog";
+// import { ContactInquiryDialog } from "./ContactInquiryDialog";
+import { EXTERNAL_FORM_URL } from "@/lib/constants";
 
 export function Nav(): React.JSX.Element {
   const [active, setActive] = useState<string>("");
@@ -159,13 +160,21 @@ export function Nav(): React.JSX.Element {
           </a>
         </div>
 
-        <ContactInquiryDialog
+        {/* <ContactInquiryDialog
           trigger={
             <button type="button" className="site-nav-cta">
               Nous rejoindre
             </button>
           }
-        />
+        /> */}
+        <a
+          href={EXTERNAL_FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="site-nav-cta"
+        >
+          Nous rejoindre
+        </a>
       </div>
     </nav>
   );

@@ -11,7 +11,8 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 import { useState } from "react";
-import { ContactInquiryDialog } from "./ContactInquiryDialog";
+// import { ContactInquiryDialog } from "./ContactInquiryDialog";
+import { EXTERNAL_FORM_URL } from "@/lib/constants";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -112,7 +113,7 @@ export function Footer() {
               >
                 Accessibilité
               </Link>
-              <ContactInquiryDialog
+              {/* <ContactInquiryDialog
                 title="Contactez-nous"
                 description="Indiquez vos coordonnées et votre message. Nous reviendrons vers vous rapidement."
                 submitLabel="Envoyer"
@@ -124,7 +125,15 @@ export function Footer() {
                     Contact
                   </button>
                 }
-              />
+              /> */}
+              <a
+                href={EXTERNAL_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors duration-200"
+              >
+                Contact
+              </a>
               <button
                 type="button"
                 data-open-policy
